@@ -1,6 +1,6 @@
-package homework2.builder;
+package humanCreater.builder;
 
-import homework2.factory.Skills;
+import humanCreater.factory.Skills;
 
 public class HumanBuilder {
     private Skills skill1;

@@ -1,6 +1,6 @@
-package homework2.builder;
+package humanCreater.builder;
 
-import homework2.factory.Skills;
+import humanCreater.factory.Skills;
 
 public class Human {
     private Skills skill1;
@@ -13,6 +13,6 @@ public class Human {
 
     @Override
     public String toString() {
-        return "I'm " + skill1.text() + " and" + skill2.text() +" !";
+        return skill1.text() + " and" + skill2.text() +" !";
     }
 }

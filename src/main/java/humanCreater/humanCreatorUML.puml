@@ -1,0 +1,64 @@
+@startuml
+class homework2.factory.physicalAbilities.Strength {
++ String text()
++ void PhysicMethod()
+}
+class homework2.builder.Human {
+- Skills skill1
+- Skills skill2
++ String toString()
+}
+class homework2.factory.Skills {
++ String text()
+}
+interface homework2.factory.intellectualAbilities.IntellectualAbilities {
+~ void IntellectMethod()
+}
+class homework2.factory.physicalAbilities.Dexterity {
++ String text()
++ void PhysicMethod()
+}
+class homework2.factory.SkillsFactory {
++ Skills createSkills(int)
+}
+class homework2.builder.HumanBuilder {
+- Skills skill1
+- Skills skill2
++ HumanBuilder setSkill1(Skills)
++ HumanBuilder setSkill2(Skills)
++ Human create()
+}
+class homework2.factory.intellectualAbilities.Kindness {
++ String text()
++ void IntellectMethod()
+}
+class homework2.Main {
++ {static} void main(String[])
+}
+class homework2.factory.intellectualAbilities.Intellect {
++ String text()
++ void IntellectMethod()
+}
+interface homework2.factory.physicalAbilities.PhysicalAbilities {
+~ void PhysicMethod()
+}
+
+
+homework2.factory.physicalAbilities.PhysicalAbilities <|.. homework2.factory.physicalAbilities.Strength
+homework2.factory.Skills <|-- homework2.factory.physicalAbilities.Strength
+homework2.factory.physicalAbilities.PhysicalAbilities <|.. homework2.factory.physicalAbilities.Dexterity
+homework2.factory.Skills <|-- homework2.factory.physicalAbilities.Dexterity
+homework2.factory.intellectualAbilities.IntellectualAbilities <|.. homework2.factory.intellectualAbilities.Kindness
+homework2.factory.Skills <|-- homework2.factory.intellectualAbilities.Kindness
+homework2.factory.intellectualAbilities.IntellectualAbilities <|.. homework2.factory.intellectualAbilities.Intellect
+homework2.factory.Skills <|-- homework2.factory.intellectualAbilities.Intellect
+
+Main ..> SkillsFactory : create
+Main ..> HumanBuilder : used
+
+SkillsFactory ..> Skills :create
+
+HumanBuilder "1" -- "1.*" Human
+Human "1" o-- "2" Skills
+
+@enduml

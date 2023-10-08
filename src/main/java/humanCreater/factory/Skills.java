@@ -1,4 +1,4 @@
-package homework2.factory;
+package humanCreater.factory;
 
 public class Skills {
     public String text() {
